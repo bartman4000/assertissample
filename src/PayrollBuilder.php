@@ -24,14 +24,15 @@ class PayrollBuilder
         {
             $filename.='.csv';
         }
+        if(!is_dir(OUTPUT_DIR))
+        {
+            mkdir(OUTPUT_DIR);
+        }
         $filename = OUTPUT_DIR.'/'.$filename;
 
         $existingPayroll = $this->readOldPayroll($filename);
-
         $remainingMonths = $this->getRemainingMonths(new DateTime('now'));
-
         $payroll = $this->makeNewPayroll($remainingMonths,$existingPayroll);
-
         $outputFile = $this->savePayrollToFile($payroll,$filename);
         echo "Payroll was saved to {$outputFile}";
     }
