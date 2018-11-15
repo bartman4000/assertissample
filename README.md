@@ -1,9 +1,6 @@
 Assertis Sample Application
 ===================================
 
-Small sample application prepared by Bartek Olewiński as preparation for the interview
-
-
 Installation:
 -------------
 
